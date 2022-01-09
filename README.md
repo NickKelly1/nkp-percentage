@@ -1,61 +1,27 @@
-# Nkp package template
+# @nkp/percentage
 
-Template for @nkp/ npm packages.
+[![npm version](https://badge.fury.io/js/%40nkp%2Fpercentage.svg)](https://www.npmjs.com/package/@nkp/percentage)
+[![deploy status](https://github.com/NickKelly1/nkp-percentage/actions/workflows/release.yml/badge.svg)](https://github.com/NickKelly1/nkp-percentage/actions/workflows/release.yml)
+[![known vulnerabilities](https://snyk.io/test/github/NickKelly1/nkp-percentage/badge.svg)](https://snyk.io/test/github/NickKelly1/nkp-percentage)
 
-This tempalte uses pnpm as a package manager instead of npm or yarn.
+Zero dependency utility functions to turn a numbers into a percentages.
 
-Pnpm improves local development by symbolically linking dependencies and speeding up the installation process.
+```ts
+import { toPercentage } from '@nkp/percentage';
 
-Comes with:
-
-1. Language: TypeScript & JavaScript
-2. Linting: Eslint
-3. Testing: Jest
-    - Support TypeScript test files
-    - Support e2e and unit tests
-    - Easy to configure for DOM testing
-4. Building: Rollup
-    1. Builds commonjs
-    2. Builds ES Modules (targets package.json#module)
-        - Package consumers using build tools such as `rollup` and `webpack` target package.json#module, the ES Module export of the package, for tree shaking. Tree shaking generates smaller packages and reduces build times.
-5. CI: GitHub actions
-    - Builds, tests and publishes to `npm` when a new release is created on GitHub.
-
-## Getting started
-
-1. Clone the repository
-    - `git clone git@github.com:NickKelly1/nkp-template.git`
-    - (optional): use GitHub's `template` feature.
-2. Install dependencies and run tests
-    1. If using nvm, run `nvm use` to set the NodeJS version
-    2. run `npm install`
-    3. run `npm test`
-3. Find and replace placeholders in the project
-    1. ---PACKAGE-DESCRIPTION---
-    2. ---NPM-PACKAGE-IDENTIFIER---
-    6. ---NPM-PACKAGE-ORG-NAME---
-    7. ---NPM-PACKAGE-NAME---
-    3. ---GITHUB-URL---
-    4. ---GITHUB-ORG-NAME---
-    5. ---GITHUB-PROJECT-NAME---
-    8. ---DESCRIPTION-TEXT---
-    9. ---USAGE-TEXT---
-4. Remove stubs and reset the repos state
-    1. Remove the contents of `src/index.ts`
-    2. set the testEnvironment in `jest.config.ts
-    3. Remove `src/examples`
-5. Add an NPM_TOKEN to the repository for CI
-    1. Using npmjs, generate a CI token
-    2. Add the token to this GitHub repositories secrets as "NPM_TOKEN"
-6. Set up the README.MD
-
-## @---NPM-PACKAGE-ORG-NAME---/---NPM-PACKAGE-NAME---
-
-[![npm version](https://badge.fury.io/js/%40---NPM-PACKAGE-ORG-NAME---%2F---NPM-PACKAGE-NAME---.svg)](https://www.npmjs.com/package/@---NPM-PACKAGE-ORG-NAME---/---NPM-PACKAGE-NAME---)
-[![deploy status](https://github.com/---GITHUB-ORG-NAME---/---GITHUB-PROJECT-NAME---/actions/workflows/release.yml/badge.svg)](https://github.com/---GITHUB-ORG-NAME---/---GITHUB-PROJECT-NAME---/actions/workflows/release.yml)
-[![known vulnerabilities](https://snyk.io/test/github/---GITHUB-ORG-NAME---/---GITHUB-PROJECT-NAME---/badge.svg)](https://snyk.io/test/github/---GITHUB-ORG-NAME---/---GITHUB-PROJECT-NAME---)
-
----DESCRIPTION-TEXT---
+toPercentage(1);                      // "100.00%"
+toPercentage(0.1);                    // "10.00%"
+toPercentage(0.01);                   // " 1.00%"
+toPercentage(0.001);                  // " 0.10%"
+toPercentage(0.0001);                 // " 0.01%"
+toPercentage(0.00001);                // " 0.00%"
+toPercentage(0.5);                    // "50.00%"
+toPercentage(0.5, { decimals: 3 });   // "50.000%"
+toPercentage.defaults.decimals = 5
+toPercentage(0.5);                    // "50.00000%"
+toPercentage.defaults.sign = false
+toPercentage(0.5);                    // "50.00000"
+```
 
 ## Table of contents
 
@@ -69,31 +35,27 @@ Comes with:
 
 ## Installation
 
-### NPM
+### npm
 
 ```sh
-npm install @---NPM-PACKAGE-ORG-NAME---/---NPM-PACKAGE-NAME---
+npm install @nkp/percentage
 ```
 
-### Yarn
+### yarn
 
 ```sh
-yarn add @---NPM-PACKAGE-ORG-NAME---/---NPM-PACKAGE-NAME---
+yarn add @nkp/percentage
 ```
 
-### PNPM
+### pnpm
 
 ```sh
-pnpm add @---NPM-PACKAGE-ORG-NAME---/---NPM-PACKAGE-NAME---
+pnpm add @nkp/percentage
 ```
 
 ### Exports
 
-`@---NPM-PACKAGE-ORG-NAME---/---NPM-PACKAGE-NAME---` targets CommonJS and ES modules. To utilise ES modules consider using a bundler like `webpack` or `rollup`.
-
-## Usage
-
----USAGE-TEXT---
+`@nkp/percentage` targets CommonJS and ES modules. To utilise ES modules consider using a bundler like `webpack` or `rollup`.
 
 ## Updating dependencies
 

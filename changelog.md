@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.0.1 - 202x-xx-xx
+## 0.0.1 - 2022-01-09
 
 ### Added
+
+- `toPercentage`
 
 ### Changed
 
