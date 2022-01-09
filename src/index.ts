@@ -21,8 +21,8 @@ export interface PercentageOptions {
  * @param decimals  the number of decimals to show
  */
 export function toPercentage(absolute: number, options?: PercentageOptions): string {
-  const decimals = options?.decimals ?? toPercentage.DEFAULT_OPTIONS.decimals;
-  const sign = options?.sign ?? toPercentage.DEFAULT_OPTIONS.sign;
+  const decimals = options?.decimals ?? toPercentage.defaults.decimals;
+  const sign = options?.sign ?? toPercentage.defaults.sign;
 
   if (!Number.isFinite(absolute)) return `? ${absolute.toString()}`;
 
@@ -60,7 +60,7 @@ export namespace toPercentage {
   /**
    * Default options for {@link toPercentage}
    */
-  export const DEFAULT_OPTIONS: Required<PercentageOptions> = {
+  export const defaults: Required<PercentageOptions> = {
     decimals: 2,
     sign: true,
   };
