@@ -1,7 +1,7 @@
 {
   "name": "@nkp/percentage",
   "sideEffects": false,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Turn a number into a percentage",
   "main": "cjs/index.js",
   "module": "es/index.js",
