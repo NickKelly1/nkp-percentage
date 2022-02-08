@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 - 2022-02-07
+
+### Changed
+
+- Updated readme.md
+
 ## 1.0.0 - 2022-02-07
 
 Stable release

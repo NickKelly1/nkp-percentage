@@ -25,13 +25,16 @@ toPercentage(0.5);                    // "50.00000"
 
 ## Table of contents
 
+- [Exports](#exports)
 - [Installation](#installation)
   - [npm](#npm)
   - [yarn](#yarn)
   - [pnpm](#pnpm)
-  - [Exports](#exports)
-- [Usage](#usage)
-- [Updating Dependencies](#updating-dependencies)
+- [Publsihing](#publishing)
+
+## Exports
+
+`@nkp/result` exports both CommonJS and ES modules.
 
 ## Installation
 
@@ -51,34 +54,6 @@ yarn add @nkp/percentage
 
 ```sh
 pnpm add @nkp/percentage
-```
-
-### Exports
-
-`@nkp/percentage` targets CommonJS and ES modules. To utilise ES modules consider using a bundler like `webpack` or `rollup`.
-
-## Updating dependencies
-
-To update dependencies run one of
-
-```sh
-# if npm
-# update package.json
-npx npm-check-updates -u
-# install
-npm install
-
-# if yarn
-# update package.json
-yarn create npm-check-updates -u
-# install
-yarn
-
-# if pnpm
-# update package.json
-pnpx npm-check-updates -u
-# install
-pnpm install
 ```
 
 ## Publishing
